@@ -1,16 +1,16 @@
 .box1 {
-    position: absolute; 
-    width: 45%;
+    position: absolute;
+    width: 49%;
     height: 70%;
-    border: solid black;
-    top: 50px;
+    border-right:solid black;
+    top: 120px;
 }
 
 .box2{
-    position: absolute; 
-    width: 45%;
+    position: absolute;
+    width: 49%;
     height: 70%;
-    border: solid black;
-    top: 50px;
+    /* border: solid black; */
+    top: 120px;
     left: 51%;
 }
