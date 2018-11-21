@@ -49,7 +49,7 @@ function clearScreen(){
 function winnerMessage(){
   alert("Winner! Winner!");
   let next_level = level+2;
-  alert("Level" + next_level+ "!");
+  alert("Level " + next_level+ "!");
 }
 
 function startGame(){
