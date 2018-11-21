@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.niggaP{font-size: 550%; position: relative; left: 155px; top : 10px; font-family: 'Rouge Script', cursive;}
+.imgFunk{position : relative; left :180px; top : 30px; }
+legend{font-family: 'Rouge Script',cursive; font-size: 150%;}
+fieldset{background-color : lightyellow; border : 10px solid yellow; margin-bottom : 10px; width : 720px; border-radius: 10px;}
+label{ width : 180px; display : inline-block; text-align : right; vertical-align : top; font-family: 'Trocchi', serif; font-weight: bold}
+.leftlabel{display: inline-block; background-color: red; text-align : center; vertical-align : top; color : white; padding : 3px; width : 50px; height : 21px; border-radius: 25px; font-weight: bold;}
+.rightlabel{display : inline-block; background-color: purple; text-align : center; vertical-align : top; color : white; padding : 3px; width : 50px;height:21px; border-radius: 25px; font-weight: 850;}
+.therightsize{width : 360px; height: 50px}
+label:hover{font-size:40px}
+input:hover{font-size: 40px}
+legend{font-weight : bold}	
+</style>
+
+</head>
+<body>
+
+<img src = "C:\Users\user\Desktop\Cinder.png" class = "imgFunk">
+<span class = "niggaP">Cinder</span>
+<form method = "post"> 
+
+<fieldset>
+<legend>Your Face</legend>
+
+<label for = "avatar">Your image:</label>
+<input type = "file" id = "avatar" name = "YourImage"required><br><br>
+<label>Image preview:&nbsp</label><img id = "preview">
+</fieldset>
+
+<fieldset>
+<legend> Your General Details </legend>
+
+<label for = "name">Name:</label>
+<input type = "text" id = "name" placeholder = "Your full name here" name = "Name" required><br><br>
+
+<label>Gender:</label>
+<input type = "radio" name = "Gender"  name = "Male">Male
+<input type = "radio" name = "Gender"  name = "Female" required >Female<br><br>
+
+<label for = "age">Age:</label>
+<input type = "number" value = "18" id = "age" name = "Age" required><br><br>
+
+<label for = "dob">Date of birth:</label>
+<input type = "date" id = "dob" name = "DateOfBirth"><br><br>
+
+<!--<label for = "favecolor">Fovourite color:</label>
+<input type = "color" id = "favecolor" name = "FavouriteColor"><br><br>-->
+
+<label for = "country">Country:</label>
+<select id = "country" name = "WhichCountry">
+	<option>India</option>
+	<option>France</option>
+	<option>Syria</option>
+	<option>Somalia</option>
+	<option>United Kingdom</option>
+	<option>-no selection-</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>Search for</legend>
+
+<label for = "distance">Distance:</label> 
+<span class = "leftlabel">0km</span><input type = "range" min = "0" max = "100" id = "distace" name = "Distance"><span class = "rightlabel">100km</span><br>
+<br><br>
+<label for = "age">Age:</label>
+<span class = "leftlabel">18</span><input type = "range" min = "0" max = "100" id = "age" name = "Age"><span class = "rightlabel">50+</span>
+</fieldset>
+
+<fieldset>
+<legend>Your Contact Information</legend>
+
+<label for ="email">Email:</label>
+<input type = "email" id = "email" required name = "Email"><br><br>
+
+<label for = "mobile">Mobile:</label>
+<input type = "tel" id = "mobile" name = "Mobile" ><br><br>
+
+<label for = "address">Address:</label>
+<textarea rows="3" cols = "1" id = "address" name = "Address" class = "therightsize">
+</textarea><br><br>
+
+<label >Method to contact you:</label>
+<input type = "checkbox" id = "Email" name = "ContactEmail" id = "cemail">Email
+<input type = "checkbox" id = "whatsapp" name = "WhatsApp">WhatsApp
+<input type = "checkbox" id = "inappchat" name = "In-appChat">In-app chat
+</fieldset>
+
+<input type="submit" >
+</form>
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+
+</body>
+</html>
