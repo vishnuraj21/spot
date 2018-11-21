@@ -1,70 +1,69 @@
-
-function startGame(){
-  makeFaces();
+let level = 0
+function makeAFace(){
+  let position_left = Math.floor(Math.random()*500);
+  let position_top = Math.floor(Math.random()*500);
+  face = document.createElement("IMG");
+  face.setAttribute("src", "https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
+  face.setAttribute("style","position: absolute;");
+  face.style.left = position_left+"px";
+  face.style.top = position_top+"px";
+  return face;
 }
 
+function placeTheFace(level){
+  level++;
+  var num_faces = level*5
+  clearScreen();
+  box1 = document.getElementById("box1");
+  box2 = document.getElementById("box2");
 
-function winner() {
-  alert("Winner! Winner!");
+  for(let count = 0; count < num_faces; count++) {
+    let face1 = makeAFace();
+    face1.setAttribute("class", "wrong_choice")
+    let face2 = face1.cloneNode();
+    box1.appendChild(face1);
+    box2.appendChild(face2);
+  }
+  //Place the odd face
+  face = makeAFace();
+  face.setAttribute("id","right_choice");
+  box1.appendChild(face);
 }
 
 function gameOver(){
   alert("Game Over!");
-  theBody = document.getElementById("theBody");
-  
-  while(theBody.firstChild){
-    theBody.removeChild(theBody.firstChild);
+  clearScreen();
+}
+
+function clearScreen(){
+  box1 = document.getElementById("box1");
+  box2 = document.getElementById("box2");
+  while(box1.firstChild){
+    box1.removeChild(box1.firstChild);
+  }
+  while(box2.firstChild){
+    box2.removeChild(box2.firstChild);
   }
 }
 
-function removeOddOne(){
-  odd_one = document.getElementById("oddOne");
-  odd_one.parentNode.removeChild(odd_one);
+function winnerMessage(){
+  alert("Winner! Winner!");
+  let next_level = level+2;
+  alert("Level" + next_level+ "!");
 }
-function makeFaces(level){
-    let count = 1;
-    var level = 10;
-    box_one = document.getElementById("box1");
-    box_two = document.getElementById("box2");
 
-    while(count < level) {
-        let smiley = document.createElement("IMG");
-        smiley.setAttribute("src", "https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
-        let smiley_two = document.createElement("IMG");
-        smiley_two.setAttribute("src", "https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
-        top_position = Math.floor(Math.random()*500);
-        left_position = Math.floor(Math.random()*500);
+function startGame(){
+  placeTheFace(level);
+  right_choice.addEventListener("click", winnerMessage);
+  right_choice.addEventListener("click", function(){
+    level++;
+  })
+  right_choice.addEventListener("click", function(){startGame(level)});
 
-        smiley.setAttribute("style", "position: absolute; ");
-        smiley.setAttribute("id", "wrong_choice")
-        smiley_two.setAttribute("style", "position: absolute; ");
-        smiley.style.left = left_position+"px";
-        smiley.style.top = top_position+"px";
-
-        smiley_two.style.left = left_position+"px";
-        smiley_two.style.top = top_position+"px";
-
-        box_one.appendChild(smiley);
-        box_two.appendChild(smiley_two);
-
-        count++;
-    }
-
-    let odd_one = document.createElement("IMG");
-    odd_one.setAttribute("src", "https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
-    odd_one.setAttribute("id", "oddOne");
-    odd_one.setAttribute("style", "position: absolute; ");
-    top_position = Math.floor(Math.random()*500);
-    left_position = Math.floor(Math.random()*500);
-    odd_one.style.left = left_position+"px";
-    odd_one.style.top = top_position+"px";
-
-
-    box_one.appendChild(odd_one);
-    odd_one.addEventListener("click", winner);
-    odd_one.addEventListener("click", removeOddOne);
-    odd_one.addEventListener("click", makeFaces);
-    wrong_choice.addEventListener("click", gameOver);
-
+  //Cool way to addEventListener to the elements of a class
+  let wrong_choices = document.getElementsByClassName("wrong_choice");
+  for (var i = 0; i < wrong_choices.length; i++) {
+    wrong_choices[i].addEventListener("click", gameOver);
+  }
 
 }
