@@ -1,6 +1,7 @@
 # Spot 
-Each new level has increases difficulty by adding more faces. 
 "Spot the Difference" puzzle created using HTML, CSS and JavaScript. 
+Each new level has increases difficulty by adding more faces. 
+
 
 
 ## Screenshots
