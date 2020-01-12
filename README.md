@@ -1,2 +1,4 @@
 # Spot 
-A "Spot the Difference" webapp created using HTML, CSS and JavaScript.
+"Spot the Difference" puzzle created using HTML, CSS and JavaScript.
+
+
