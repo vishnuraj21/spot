@@ -1,5 +1,5 @@
 # Spot 
-"Spot the Difference" puzzle created using HTML, CSS and JavaScript. 
+A "Spot the Difference" puzzle created using HTML, CSS and JavaScript. 
 Each new level increases in difficulty with more faces. 
 
 
