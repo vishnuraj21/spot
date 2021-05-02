@@ -1,6 +1,6 @@
 let level = 0
 function makeAFace(){
-  let position_left = Math.floor(Math.random()*500);
+  let position_left = Math.floor(Math.random()*400);
   let position_top = Math.floor(Math.random()*500);
   face = document.createElement("IMG");
   face.setAttribute("src", "https://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
@@ -12,7 +12,7 @@ function makeAFace(){
 
 function placeTheFace(level){
   level++;
-  var num_faces = level*5
+  var num_faces = level*3
   clearScreen();
   box1 = document.getElementById("box1");
   box2 = document.getElementById("box2");
@@ -47,7 +47,7 @@ function clearScreen(){
 }
 
 function winnerMessage(){
-  alert("Winner! Winner!");
+  alert("Good job Ash!");
   let next_level = level+2;
   alert("Level " + next_level+ "!");
 }
