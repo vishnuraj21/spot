@@ -47,7 +47,7 @@ function clearScreen(){
 }
 
 function winnerMessage(){
-  alert("Good job Ash!");
+  alert("Winner Winner!");
   let next_level = level+2;
   alert("Level " + next_level+ "!");
 }
